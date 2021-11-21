@@ -1,0 +1,35 @@
+body {
+  background-color: whitesmoke;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes button_hover_in {
+  from {background-color: whitesmoke; }
+  to {background-color: #B026FF;}
+}
+@keyframes button_hover_out {
+  from {background-color: #B026FF;}
+  to {background-color: whitesmoke;}
+}
+
+.button {
+  border-radius: 25px;
+  border: 2px solid #B026FF;
+  padding: 20px;
+  width: 100px;
+  height: 25;
+  background-color: whitesmoke;
+}
+
+.button.out {
+  animation-name: button_hover_out;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+.button.over {
+  animation-name: button_hover_in;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
