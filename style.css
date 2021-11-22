@@ -1,35 +1,125 @@
 body {
-  background-color: whitesmoke;
+  background-color: #F9F5C8;
+  font-family: "Spectral";
+}
+
+
+.main {
+  height: 100%;
+  width: 80%;
   display: flex;
-	justify-content: center;
-	align-items: center;
+  margin-left: 300px;
+  padding: 0px 10px;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes button_hover_in {
-  from {background-color: whitesmoke; }
-  to {background-color: #B026FF;}
-}
-@keyframes button_hover_out {
-  from {background-color: #B026FF;}
-  to {background-color: whitesmoke;}
-}
 
-.button {
-  border-radius: 25px;
-  border: 2px solid #B026FF;
+.sidebar {
+  height: 100%;
+  width: 15%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #264653;
+  overflow-x: hidden;
+  padding-top 20px;
+}
+.sidebar div {
   padding: 20px;
-  width: 100px;
-  height: 25;
-  background-color: whitesmoke;
+  color: #B26C7B;
+}
+.sidebar hr {
+  border: 1px solid #F9F5C8;
+}
+#skills {
+  list-style-type: none;
+  border: 2px;
+}
+#skills>li {
+  padding: 10px;
 }
 
-.button.out {
-  animation-name: button_hover_out;
-  animation-duration: .5s;
-  animation-fill-mode: forwards;
+#skill-bar-1, #skill-bar-2, #skill-bar-3, #skill-bar-4, #skill-bar-5 {
+  background-color: #DDE9D8;
+  border-radius: 13px;
+  padding: 3px;
+  box-shadow: 5px 5px 4px 5px #0D181C;
 }
-.button.over {
-  animation-name: button_hover_in;
-  animation-duration: .5s;
-  animation-fill-mode: forwards;
+#skill-bar-1>div {
+  background-color: #B26C7B;
+  width: 20%;
+  height: 10px;
+  border-radius: 10px;
+  padding: 3px;
+}#skill-bar-2>div {
+  background-color: #B26C7B;
+  width: 40%;
+  height: 10px;
+  border-radius: 10px;
+  padding: 3px;
+}#skill-bar-3>div {
+  background-color: #B26C7B;
+  width: 60%;
+  height: 10px;
+  border-radius: 10px;
+  padding: 3px;
+}#skill-bar-4>div {
+  background-color: #B26C7B;
+  width: 80%;
+  height: 10px;
+  border-radius: 10px;
+  padding: 3px;
+}#skill-bar-5>div {
+  background-color: #B26C7B;
+  width: 97%;
+  height: 10px;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.card {
+  perspective: 150rem;
+  position: relative;
+  height: 300px;
+  width: 300px;
+  box-shadow: none;
+  background: none;
+}
+
+.card-side {
+  height: 300px;
+  border-radius: 15px;
+  transition: all 0.8s ease;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2rem;
+  width: 80%;
+  color: white;
+}
+.card-side.back {
+  transform: rotateY(-180deg);
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg,
+  #4158D0 0%,
+  #C850C0 46%,
+  #FFCC70 100%);
+}
+.card-side.front {
+  background-color: #0093E9;
+  background-image: linear-gradient(
+    160deg,
+    #0093E9 0%,
+    #80D0C7 100%
+    );
+}
+.card:hover .card-side.front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-side.back {
+  transform: rotateY(0deg);
 }
