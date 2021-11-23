@@ -1,5 +1,12 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: #F9F5C8;
+  min-height: 100vh;
+  background-color: #310D20;
   font-family: "Spectral";
 }
 
@@ -7,11 +14,14 @@ body {
 .main {
   height: 100%;
   width: 80%;
-  display: flex;
   margin-left: 300px;
-  padding: 0px 10px;
-  justify-content: center;
-  align-items: center;
+  padding: 50px;
+
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 300px 300px 300px;
+  column-gap: 100px;
+  row-gap: 100px;
 }
 
 
@@ -22,9 +32,19 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #264653;
+  /*background-color: #264653;*/
+  background-size: 100% 200%;
+  background-image: linear-gradient(to bottom, #212431 50%, #264653 50%);
+  -webkit-transition: background-position .5s;
+  -moz-transition: background-position .5s;
+  transition: background-position .5s;
+  overflow-x: hidden;
   overflow-x: hidden;
   padding-top 20px;
+  opacity: .5;
+}
+.sidebar:hover {
+    background-position: 0 -100%;
 }
 .sidebar div {
   padding: 20px;
@@ -33,6 +53,8 @@ body {
 .sidebar hr {
   border: 1px solid #F9F5C8;
 }
+
+
 #skills {
   list-style-type: none;
   border: 2px;
@@ -102,18 +124,19 @@ body {
 }
 .card-side.back {
   transform: rotateY(-180deg);
-  background-color: #4158D0;
+  background-color: #E6AACE;
   background-image: linear-gradient(43deg,
-  #4158D0 0%,
-  #C850C0 46%,
-  #FFCC70 100%);
+  #E6AACE 0%,
+  #869EC1 46%,
+  #E6AACE 100%);
 }
 .card-side.front {
-  background-color: #0093E9;
+  background-color: #1A3038;
   background-image: linear-gradient(
-    160deg,
-    #0093E9 0%,
-    #80D0C7 100%
+    43deg,
+    #1A3038 0%,
+    #B26C7B 46%,
+    #336070 100%
     );
 }
 .card:hover .card-side.front {
